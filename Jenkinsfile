@@ -4,7 +4,7 @@ node('master') {
    }
    stage('Build and Unit test') {
      sh 'mvn clean verify -DskipITs=true';
-     junit '**/target/superfire-reports/TEST-*.xml'
+     junit '**/target/surefire-reports/TEST-*.xml'
      archive 'target/*.jar'
    }
    stage('Integration Test'){
